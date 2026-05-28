@@ -8,6 +8,8 @@ The system simulates a chatbot experience by interpreting user input and returni
 
 This project demonstrates the implementation of layered architecture, event-driven programming, and basic natural language pattern matching in a desktop environment.
 
+My name is Kezia Cleophas and my Student number is ST10483194.
+
 ---
 
 ## 🎯 Project Objectives
