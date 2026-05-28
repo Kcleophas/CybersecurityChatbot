@@ -1,82 +1,80 @@
-# 🛡️ CyberSecurity Awareness Chatbot
+# 🛡️ CyberSecurity Chatbot (WPF Desktop Application)
 
 ## 📌 Project Overview
+The CyberSecurity Chatbot is a Windows desktop application developed using C# and WPF (.NET).  
+It is designed to provide users with basic cybersecurity awareness through interactive, keyword-driven conversations.
 
-The CyberSecurity Awareness Chatbot is a C# console-based application designed to educate users about common cybersecurity threats in an interactive and engaging way.
+The system simulates a chatbot experience by interpreting user input and returning contextually relevant security advice, greetings, and fallback responses when input is not recognized.
 
-The system simulates a simple chatbot that responds to user input and provides security awareness tips such as phishing prevention, password safety, and safe browsing habits.
-
-The project also includes multimedia enhancements such as audio output (WAV greeting) and ASCII art to improve user experience.
+This project demonstrates the implementation of layered architecture, event-driven programming, and basic natural language pattern matching in a desktop environment.
 
 ---
 
 ## 🎯 Project Objectives
-
-The main objectives of this project are:
-
-- To develop an interactive chatbot using C#
-- To educate users about cybersecurity risks
-- To apply object-oriented programming principles
-- To implement file handling and audio integration
-- To demonstrate version control using Git and GitHub
-- To implement Continuous Integration (CI) using GitHub Actions
+- Develop an interactive chatbot using C# and WPF
+- Provide basic cybersecurity awareness to users
+- Implement keyword-based response handling
+- Apply separation of concerns (UI vs logic layer)
+- Build a maintainable and scalable application structure
 
 ---
 
-## 💡 Key Features
-
-### 🤖 Chatbot Interaction
-- Accepts user input via console
-- Responds with cybersecurity-related messages
-- Provides educational feedback based on keywords
-
-### 🔐 Cybersecurity Awareness Topics
-The chatbot covers:
-- Phishing attacks and how to avoid them
-- Strong password creation techniques
-- Safe internet browsing practices
-- Awareness of online scams and threats
-
-### 🔊 Audio Integration
-- Plays a WAV greeting sound when the program starts
-- Enhances user engagement and interactivity
-
-### 🎨 ASCII Art Display
-- Displays styled text-based visuals in the console
-- Improves user interface experience
+## ⚙️ Key Features
+- 💬 Interactive chat interface (WPF UI)
+- 🔐 Cybersecurity-focused responses (password safety, phishing awareness, etc.)
+- 🧠 Keyword recognition system for input processing
+- 🔄 Randomized responses for natural interaction feel
+- ⚠️ Default fallback response for unknown inputs
+- 🧩 Modular architecture (UI layer + logic layer separation)
 
 ---
 
----
+## 🧠 System Design & Architecture
 
-## 🔄 Version Control (Git & GitHub)
+The application follows a **layered architecture approach**:
 
-This project was developed using Git for version control and GitHub for repository hosting.
+### 1. Presentation Layer (UI)
+- Built using `MainWindow.xaml`
+- Handles user interaction (input/output)
+- Sends user messages to backend logic
+- Displays chatbot responses in chat window
 
-### 📌 Commit History Highlights:
-- Initial project setup
-- Implemented chatbot logic
-- Added cybersecurity response system
-- Integrated audio greeting feature (WAV file)
-- Added ASCII art interface
-- Final bug fixes and improvements
+### 2. Logic Layer
+- Contains core chatbot functionality:
+  - `Chatbot.cs` → Main processing engine
+  - `ResponseManager.cs` → Handles keyword-response mapping
+  - `MemoryStore.cs` → Stores conversation or contextual data
 
----
-
-## ⚙️ Continuous Integration (CI)
-
-Continuous Integration was implemented using **GitHub Actions**.
-
-### 🔁 CI Process:
-Every push to the repository automatically triggers:
-- Project build process
-- Code compilation checks
-- Execution validation
-
-### ✅ CI Status Proof:
-![CI Success](ci-success.png)
+### 3. Event Flow
+1. User enters message in input box  
+2. Clicks “Send” button  
+3. Input is passed to chatbot logic  
+4. Keyword matching is performed  
+5. Response is returned and displayed in UI  
 
 ---
+
+## 🧩 Core Functionality
+
+### 🔹 Keyword-Based Response System
+User inputs are matched against a dictionary of predefined keywords.
+
+Example:
+- Input: `"hello"`
+- Output: `"Hi there! Need cybersecurity help?"`
+
+- Input: `"password"`
+- Output: `"Use strong passwords with numbers and symbols."`
+
+---
+
+### 🔹 Fallback Handling
+If the input does not match any known keyword, the system responds with:
+> "I'm not sure about that. Try asking about cybersecurity tips like passwords or phishing."
+
+---
+
+## 🏗️ Project Structure
 
 ## 🧪 How to Run the Project
 
