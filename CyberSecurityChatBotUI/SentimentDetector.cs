@@ -1,4 +1,4 @@
-﻿namespace CyberSecurityChatbotGUI
+﻿namespace CyberSecurityChatBotUI
 {
     public enum Sentiment
     {
