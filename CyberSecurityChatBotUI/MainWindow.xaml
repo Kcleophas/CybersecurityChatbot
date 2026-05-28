@@ -1,4 +1,4 @@
-﻿<Window x:Class="CyberSecurityChatBotGUI.MainWindow"
+﻿<Window x:Class="CyberSecurityChatBotUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="CyberSecurity Awareness Bot"
@@ -11,7 +11,7 @@
         <!-- ROW STRUCTURE -->
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="424.04"/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 

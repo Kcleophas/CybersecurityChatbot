@@ -1,4 +1,4 @@
-﻿namespace CyberSecurityChatbotGUI
+﻿namespace CyberSecurityChatbotUI
 {
     public class ResponseManager
     {

@@ -1,33 +1,29 @@
-﻿using CyberSecurityChatbotUI;
-using System;
+﻿using System;
 using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Runtime.InteropServices; // added
+using System.Runtime.InteropServices;
 
 namespace CyberSecurityChatBotUI
 {
     public partial class MainWindow : Window
     {
-        public ResponseManager Bot { get => Bot1; set => Bot1 = value; }
-        public ResponseManager Bot1 { get; set; }
+        private ChatBot Bot;
 
         public MainWindow()
         {
             InitializeComponent();
-            Bot = new ResponseManager();
 
-            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) // changed
-            {
-            }
-            else
+            Bot = new ChatBot();
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 SoundPlayer player = new SoundPlayer("welcome.wav");
                 player.PlaySync();
             }
 
-            AddMessage("Bot: Hello!", false);
+            AddMessage(Bot.GetGreeting(), false);
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
@@ -39,11 +35,13 @@ namespace CyberSecurityChatBotUI
 
             AddMessage(input, true);
 
-            AddMessage("Bot: Message received securely 🔐", false);
+            string response = Bot.ProcessInput(input);
 
+            AddMessage(response, false);
 
             InputBox.Clear();
         }
+
         private void AddMessage(string message, bool isUser)
         {
             TextBlock text = new TextBlock
@@ -65,16 +63,16 @@ namespace CyberSecurityChatBotUI
 
             if (isUser)
             {
-                bubble.Background = new SolidColorBrush(Color.FromRgb(34, 197, 94)); // green
+                bubble.Background = new SolidColorBrush(Color.FromRgb(34, 197, 94));
                 bubble.HorizontalAlignment = HorizontalAlignment.Right;
             }
             else
             {
-                bubble.Background = new SolidColorBrush(Color.FromRgb(30, 41, 59)); // dark
+                bubble.Background = new SolidColorBrush(Color.FromRgb(30, 41, 59));
                 bubble.HorizontalAlignment = HorizontalAlignment.Left;
             }
 
-            ChatPanel.Children.Add(bubble); // ✅ THIS replaces AppendText
+            ChatPanel.Children.Add(bubble);
         }
     }
 }
