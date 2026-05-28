@@ -1,4 +1,4 @@
-﻿namespace CyberSecurityChatbotUI
+﻿namespace CyberSecurityChatbotGUI
 {
     public class KeywordResponder
     {

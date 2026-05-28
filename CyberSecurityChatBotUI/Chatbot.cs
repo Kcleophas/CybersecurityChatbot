@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CyberSecurityChatbotUI
+namespace CyberSecurityChatbotGUI
 {
     public class Chatbot
     {
